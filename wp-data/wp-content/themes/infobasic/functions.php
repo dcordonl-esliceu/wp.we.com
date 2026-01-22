@@ -1,27 +1,13 @@
 <?php
-/**
- * Infobasic Theme Functions
- */
 
-// Add theme support for WordPress features
-function infobasic_setup() {
-    add_theme_support( 'title-tag' );
-    add_theme_support( 'post-thumbnails' );
-    add_theme_support( 'html5', array(
-        'search-form',
-        'comment-form',
-        'comment-list',
-        'gallery',
-        'caption',
-        'style',
-        'script',
-    ) );
-}
-add_action( 'after_setup_theme', 'infobasic_setup' );
+function infobasic_config(){
 
-// Enqueue scripts and styles
-function infobasic_enqueue_assets() {
-    wp_enqueue_style( 'infobasic-style', get_stylesheet_uri() );
-    wp_enqueue_script( 'infobasic-script', get_template_directory_uri() . '/js/script.js', array(), '1.0', true );
+    echo "Ejecutando la configuración";
 }
-add_action( 'wp_enqueue_scripts', 'infobasic_enqueue_assets' );
+
+add_action('after_setup_theme','infobasic_config', 0);
+
+function infobasic_scripts(){
+    wp_enqueue_script('bootstrap_js', get_theme_file_uri('/assets/js/bootstrap.bundle.min.js'), array(), '4.5', true);
+    wp_enqueue_style('bootstrap_css', get_theme_file_uri('/assets/css/bootstrap.min.css'), array(), '4.5', 'all');
+}

@@ -1,23 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motoserras la web</title>
-</head>
-<body>
-    <h1>Bienvenidos a Motoserras la web</h1>
-    <p>Este es el tema Infobasic desarrollado por Dleon.</p>
-
 <?php
-    while(have_posts()) {
-        the_post();
-        ?>
-    <h2><a href="<?=the_permalink()?>"><?=the_title()?></a></h2>
-    <p><?=the_content()?></p>
-    <?php
-    }
-?>
 
-</body>
-</html>
+?>
+<?php get_header(); ?>
+<div class="container">
+    <main class="site-main">
+        <?php
+        if ( have_posts() ) {
+            while ( have_posts() ) {
+                the_post();
+                ?>
+                <article class="post single-post">
+                    <h1><?php echo esc_html( the_title() ); ?></h1>
+                    <div class="meta">
+                        <span class="date"><?php echo esc_html( get_the_date() ); ?></span>
+                        <span class="author">Autor: <?php echo esc_html( get_the_author() ); ?></span>
+                    </div>
+                    <div class="content">
+                        <?php the_content(); ?>
+                    </div>
+                </article>
+                <?php
+            }
+        } else {
+            echo '<p>' . esc_html__( 'Post not found.', 'infobasic' ) . '</p>';
+        }
+        ?>
+    </main>
+</div>
+<?php get_footer(); ?>

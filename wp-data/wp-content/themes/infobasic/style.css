@@ -13,3 +13,17 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: infobasic
 Tags: Tema durisimo de dleon motosierra.
 */
+
+:root{
+    --main-color: #3498db;
+    --background-body: #f4f4f4;
+    --text-color: #333333;
+    --text-color-hover: #555555;
+    --background-color-hover: #e0e0e0;
+    --text-light-color: #ffffff;
+
+}
+
+body {
+    background-color: var(--background-body);
+}

@@ -15,17 +15,13 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?php echo esc_url( home_url( '/blog' ) ); ?>">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo esc_url( home_url( '/acerca-de' ) ); ?>">Acerca de</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo site_url( "contacto" ) ?>">Contacto</a>
-                    </li>
-                </ul>
+                <?php
+                    wp_nav_menu( 
+                        array(
+                        'theme_location' => 'menu-principal',
+                    ) 
+                );
+                ?>
             </div>
         </div>
     </nav>

@@ -14,13 +14,17 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'infobasic' ); ?>">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <?php
-                    wp_nav_menu( 
-                        array(
-                        'theme_location' => 'menu-principal',
-                    ) 
-                );
+            <?php
+            wp_nav_menu( array(
+                'theme_location'    => 'menu-principal',
+                'depth'             => 3,
+                'container'         => 'div',
+                'container_class'   => 'collapse navbar-collapse',
+                'container_id'      => 'navbarNav',
+                'menu_class'        => 'navbar-nav ms-auto',
+                'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                'walker'            => new WP_Bootstrap_Navwalker(),
+            ) );
                 ?>
             </div>
         </div>

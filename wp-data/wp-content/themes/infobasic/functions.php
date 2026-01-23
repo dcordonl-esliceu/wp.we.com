@@ -1,5 +1,7 @@
 <?php
 
+require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+
 function infobasic_config(){
     
     register_nav_menus( 

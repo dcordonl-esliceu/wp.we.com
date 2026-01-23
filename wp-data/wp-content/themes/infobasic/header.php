@@ -23,7 +23,7 @@
                         <a class="nav-link" href="<?php echo esc_url( home_url( '/acerca-de' ) ); ?>">Acerca de</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo esc_url( home_url( '/contacto' ) ); ?>">Contacto</a>
+                        <a class="nav-link" href="<?php echo site_url( "contacto" ) ?>">Contacto</a>
                     </li>
                 </ul>
             </div>

@@ -6,7 +6,10 @@ function infobasic_config(){
     
     register_nav_menus( 
         array(
-        'menu-principal' => __( 'infobasic Menu Principal'),
+        'infobasic_menu-principal' => __( 'infobasic Menu Principal'),
+        'infobasic_footer_interno' => __( 'infobasic Menu footer interno'),
+        'infobasic_footer_externo' => __( 'infobasic Menu footer externo'),
+
     ) );
 }
 

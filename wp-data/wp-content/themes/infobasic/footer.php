@@ -1,5 +1,16 @@
 <footer>
-    <h3>El pie de página</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>Ves el inico</p>
+                <a href="home">Tienda</a>
+                </div>
+                <div class="col-md-12 text-center">
+                    links
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
 
 <?php wp_footer(); ?>
